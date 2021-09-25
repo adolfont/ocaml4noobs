@@ -12,10 +12,10 @@ Anteriormente trabalhamos com diversos tipos de dados em OCaml, desde os mais b�
 
 ## Pattern Matching
 
-Já utilizamos Pattern Matching várias partes desse tutorial, vamos ver agora um pouco mais em detalhe sobre como utilizar pattern match em nosso código OCaml. Essa é uma ferramenta poderosa, OCaml nos permite utilizar pattern match para capturar valores através do padrão que pode ser inferido pela equalidade estrutural (que vimos anteriormente) do dado. Podemos utilizar pattern match em praticamente qualquer estrutura da linguagem:
+Já utilizamos *Pattern Matching* em várias partes deste tutorial. Vamos ver agora um pouco mais em detalhe sobre como utilizar *pattern matching* em nosso código OCaml. Esta é uma ferramenta poderosa. OCaml nos permite utilizar *pattern matching* para capturar valores através do padrão que pode ser inferido pela igualdade estrutural (que vimos anteriormente) do dado. Podemos utilizar *pattern matching* em praticamente qualquer estrutura da linguagem:
 
 - Constantes 
-> E podemos pensar qualquer valor **let** (Ex. let a = 1) como um pattern match de uma constante a um identificador. 
+> E podemos pensar qualquer valor **let** (Ex. let a = 1) como um *pattern matching* de uma constante a um identificador. 
 - Tuplas
 - Records
 - Casos das Discriminated Unions
@@ -24,13 +24,13 @@ Já utilizamos Pattern Matching várias partes desse tutorial, vamos ver agora u
 - Tipos
 - null
 
-Aqui temos um Pattern Match simples:
+Aqui temos um *Pattern Matching* simples:
 ```OCaml
 let (a, b) = (1,2)
 (* val a : int = 1 *)
 (* val b : int = 2 *)
 ```
-Esse tipo de Pattern Match é chamado também de desestruturação. A estrutura desestruturada à esquerda é inferida os valores da estrutura à direita, ou seja o valor 1 será identificado pelo identificador a e o valor 2 será identificado pelo identificador b. 
+Esse tipo de *Pattern Matching* é chamado também de desestruturação. A estrutura desestruturada à esquerda é inferida os valores da estrutura à direita, ou seja o valor 1 será identificado pelo identificador a e o valor 2 será identificado pelo identificador b. 
 
 Em funções isso também é possível. Aqui temos uma função que recebe um valor do tipo Tuple, o primeiro item da tupla recebe o nome do parâmetro f e o segundo recebe s, por fim a função então adiciona os dois valores:
 
@@ -41,7 +41,7 @@ let addPair (f, s) =
 ```
 > Obs aqui está sendo inferido o tipo de cada elemento da tupla por os mesmos serem aplicados na função **+**.
 
-No exemplo abaixo temos também um pattern match com a mesma tupla:
+No exemplo abaixo temos também um *pattern matching* com a mesma tupla:
 ```Ocaml
 let addPair p = 
     match p with
@@ -51,7 +51,7 @@ let addPair p =
 
 (* val addPair : int * int -> int = <fun> *)
 ```
-Mas agora estamos usando a palavra reservada **match** para fazermos o pattern match dos nossos valores e isso nos permite especificar múltiplos valores que esse parâmetro pode conter e atribuir um retorno de acordo com o parâmetro recebido, nesse caso o primeiro padrão encontrado que for possível inferir a entrada vai ser o retorno que a expressão irá tomar. 
+Mas agora estamos usando a palavra reservada **match** para fazermos o *pattern matching* dos nossos valores e isso nos permite especificar múltiplos valores que esse parâmetro pode conter e atribuir um retorno de acordo com o parâmetro recebido, nesse caso o primeiro padrão encontrado que for possível inferir a entrada vai ser o retorno que a expressão irá tomar. 
 
 Nesse nosso exemplo, temos os seguintes matchs:
 > Obs: Sendo uma função que retorna a adição dos elementos no par, qualquer soma de dois números que contenha 0 sempre resulta no valor do outro número.
